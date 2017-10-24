@@ -1,3 +1,7 @@
-test1
-test2
-test3
+Name:doc1,tag:read,tag:red,tag:story,path:/
+Name:doc2,tag:unread,tag:yellow,tag:news,path:/
+Name:doc3,tag:unread,tag:blue,tag:fiction,path:/
+Name:doc4,tag:read,tag:red,tag:story,path:/
+Name:doc5,tag:read,tag:yellow,tag:news,path:/
+Name:doc6,tag:unread,tag:red,tag:story,path:/
+Name:doc7,tag:read,tag:blue,tag:fiction,path:/
