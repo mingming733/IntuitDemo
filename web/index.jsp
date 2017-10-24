@@ -5,6 +5,6 @@
   <title>Simple Jersey</title>
 </head>
 <body>
-<p><a href="rest/mydemo/tag">Demo API is running</a>
+<p><a href="rest/mydemo/tag">Click here to show all the tags</a>
 </body>
 </html>

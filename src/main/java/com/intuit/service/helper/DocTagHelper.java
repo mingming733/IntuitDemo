@@ -26,6 +26,7 @@ public class DocTagHelper {
         }
         return docs;
     }
+
     public String showTags(String docName){
         String tags = "No tags in this document";
         if(!filedLoaded){
@@ -36,6 +37,7 @@ public class DocTagHelper {
         }
         return tags;
     }
+
     public String showAllTags(){
         String tags = "";
         if(!filedLoaded){
@@ -50,12 +52,39 @@ public class DocTagHelper {
         }
         return tags;
     }
+
     public String readFile(String docName){
         if(!filedLoaded){
             loadFile();
         }
-        String path = 
+        String path = "";
+        if(docToPath.containsKey(docName)){
+            path = docToPath.get(docName);
+        }else{
+            return "No such file";
+        }
+        path += docName;
+        path +=".txt";
+        StringBuffer stringBuffer = new StringBuffer();
+        try {
+            ClassLoader classLoader = getClass().getClassLoader();
+            File file = new File(classLoader.getResource(path).getFile());
+            FileReader fileReader = new FileReader(file);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                stringBuffer.append(line);
+                stringBuffer.append("\n");
+            }
+            fileReader.close();
+            System.out.println("List of documents:");
+            System.out.println(stringBuffer.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return stringBuffer.toString();
     }
+
     private void loadFile(){
         try {
             ClassLoader classLoader = getClass().getClassLoader();
@@ -77,6 +106,7 @@ public class DocTagHelper {
         }
         filedLoaded = true;
     }
+
     private void processLine(String line){
         String[] pairs = line.split(",");
         String docName = "";
@@ -98,6 +128,7 @@ public class DocTagHelper {
             }
         }
     }
+    
     private String listToString(ArrayList<String> strs){
         StringBuilder sb = new StringBuilder();
         for(String str : strs){

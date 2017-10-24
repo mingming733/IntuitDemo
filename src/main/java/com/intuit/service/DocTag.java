@@ -51,4 +51,11 @@ public class DocTag {
         return docTagHelper.showAllTags();
     }
 
+    //Displays document content
+    @GET
+    @Path("/content/{doc}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String showContent(@PathParam("doc") String doc) {
+        return docTagHelper.readFile(doc);
+    }
 }
