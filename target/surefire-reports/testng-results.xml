@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="com.intuit.service.helper.DocTagHelperTest" duration-ms="19" started-at="2017-10-24T23:58:13Z" finished-at="2017-10-24T23:58:13Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="19" started-at="2017-10-24T23:58:13Z" finished-at="2017-10-24T23:58:13Z">
+      <class name="com.intuit.service.helper.DocTagHelperTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.intuit.service.helper.DocTagHelperTest@2cca7081]" name="setUp" is-config="true" duration-ms="6" started-at="2017-10-24T16:58:13Z" finished-at="2017-10-24T16:58:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testGetDocByTag()[pri:0, instance:com.intuit.service.helper.DocTagHelperTest@2cca7081]" name="testGetDocByTag" duration-ms="4" started-at="2017-10-24T16:58:13Z" finished-at="2017-10-24T16:58:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetDocByTag -->
+      </class> <!-- com.intuit.service.helper.DocTagHelperTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- com.intuit.service.helper.DocTagHelperTest -->
+</testng-results>

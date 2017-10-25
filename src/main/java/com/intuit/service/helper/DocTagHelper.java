@@ -17,6 +17,7 @@ public class DocTagHelper {
     boolean filedLoaded;
 
     public String getDocByTag(String tag){
+        tag = tag.toLowerCase();
         String docs = "No documents with this tag";
         if(!filedLoaded){
             loadFile();
@@ -28,12 +29,13 @@ public class DocTagHelper {
     }
 
     public String showTags(String docName){
+        docName = docName.toLowerCase();
         String tags = "No tags in this document";
         if(!filedLoaded){
             loadFile();
         }
         if(docToTag.containsKey(docName)){
-            tags = listToString(tagToDoc.get(docName));
+            tags = listToString(docToTag.get(docName));
         }
         return tags;
     }
@@ -63,6 +65,7 @@ public class DocTagHelper {
         }else{
             return "No such file";
         }
+        docName = docName.toLowerCase();
         path += docName;
         path +=".txt";
         StringBuffer stringBuffer = new StringBuffer();
@@ -85,7 +88,7 @@ public class DocTagHelper {
         return stringBuffer.toString();
     }
 
-    private void loadFile(){
+    public boolean loadFile(){
         try {
             ClassLoader classLoader = getClass().getClassLoader();
             File file = new File(classLoader.getResource("documents.txt").getFile());
@@ -105,9 +108,10 @@ public class DocTagHelper {
             e.printStackTrace();
         }
         filedLoaded = true;
+        return true;
     }
 
-    private void processLine(String line){
+    public void processLine(String line){
         String[] pairs = line.split(",");
         String docName = "";
         for(String pair: pairs){
@@ -128,8 +132,11 @@ public class DocTagHelper {
             }
         }
     }
-    
+
     private String listToString(ArrayList<String> strs){
+        if(strs == null){
+            return "";
+        }
         StringBuilder sb = new StringBuilder();
         for(String str : strs){
             sb.append(str);

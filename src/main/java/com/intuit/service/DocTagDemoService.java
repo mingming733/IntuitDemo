@@ -16,8 +16,7 @@ import java.util.ArrayList;
  * Created by marom on 27/09/16.
  */
 @Path("mydemo")
-public class DocTag {
-    private static final String PATH = "/";
+public class DocTagDemoService {
     private DocTagHelper docTagHelper = new DocTagHelper();
 
     /**
